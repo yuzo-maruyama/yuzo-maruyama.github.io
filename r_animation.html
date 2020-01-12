@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+<head>
+<meta charset="UTF-8">
+<title>講義：基礎統計</title>
+<meta name="Author" content="Yuzo Maruyama">
+</head>
+<body bgcolor="whitesmoke" text="navy" link="blue" alink="blue" vlink="navy"> 
+<h2>基礎統計：Rで作ったアニメーション</h2>
+
+回帰分析
+<ul>
+<li><a href="lse_1.gif">最小二乗法</a>：$\bar{x}$と$\bar{y}$を通過する直線．傾きを変化させた時の残差平方和
+<li><a href="regress_1.gif">最小二乗法</a>（回帰直線同じで当てはまりの程度の違い）
+<li><a href="regress_2.gif">最小二乗法</a>（回帰直線同じで当てはまりの程度の違い，決定係数$R^2$つき）
+</ul>
+主要な分布の確率関数，確率密度関数
+<ul>
+<li><a href="binom.gif">二項分布</a>（$n$固定，$p$変動）
+<li><a href="binom_2.gif">二項分布</a>（$n$変動，$p$固定）
+<li><a href="poisson.gif">ポアソン分布</a>
+<li><a href="geometric.gif">幾何分布</a>
+<li><a href="normal_1.gif">正規分布</a>（$\mu$固定，$\sigma^2$変動）
+<li><a href="normal_2.gif">正規分布</a>（$\mu$変動，$\sigma^2$固定）
+<li><a href="chi.gif">カイ二乗分布</a>
+<li><a href="t_2.gif">t分布</a>
+<li><a href="uniform.gif">一様分布</a>
+<li><a href="multi_1.gif">多項分布</a>（３項分布 $n=10$，$p.3=1/3$に固定．$p.1/p.2$が変動する時の$x.1$と$x.2$の同時確率関数）
+<li><a href="multi_2.gif">多項分布</a>（３項分布 $n=10$，$p.1/p.2=1$に固定．$p.3$が変動する時の$x.1$と$x.2$の同時確率関数）
+</ul>
+
+大数の法則
+<ul>
+ <li> 二項分布： $n$の増加につれて，確率変数$\mathrm{Bin}(n,p)/p$の区間$(p-\epsilon,p+\epsilon)$に入る確率が$1$へ収束する
+<ul>
+<li>  <a href="binomial_large_number_p=0.6_epsilon=0.01.gif">二項分布１</a> $p=0.6$, $\epsilon=0.01$
+<li> <a href="binomial_large_number_p=0.6_epsilon=0.01around_0.6.gif">二項分布２</a> $\epsilon=0.01$ $p=0.6$付近
+<li><a href="binomial_large_number_p=0.6_epsilon=0.001.gif">二項分布３</a> $\epsilon=0.001$
+<li><a href="binomial_large_number_p=0.6_epsilon=0.001around_0.6.gif">二項分布４</a> $\epsilon=0.001$ $p=0.6$付近
+</ul>
+<li>カイ二乗分布 $n$の増加につれて，確率変数$\chi^2_n/n$の区間$(1-\epsilon,1+\epsilon)$に入る確率が$1$へ収束する
+<ul>
+<li><a href="chi_1.gif">カイ二乗分布１</a> $\epsilon=0.1$
+<li><a href="chi_2.gif">カイ二乗分布２</a> $\epsilon=0.1$，$1$付近
+<li><a href="chi_3.gif">カイ二乗分布３</a> $\epsilon=0.01$
+<li><a href="chi_4.gif">カイ二乗分布４</a> $\epsilon=0.01$，$1$付近
+</ul>
+</ul>
+
+中心極限定理
+<ul>
+<li><a href="binomial_clt.gif">二項分布　中心極限定理１</a>
+<li><a href="binomial_clt_2.gif">二項分布　中心極限定理２</a>
+<li><a href="binomial_pmf.gif">二項分布　中心極限定理３ </a>$p=0.6$
+<li><a href="chi_clt_1.gif">カイ二乗分布　中心極限定理</a>
+</ul>
+乱数発生（二項分布と正規分布）
+<ul>
+<li>二項分布 
+<ul>
+ <li><a href="binomial_test_a_1_p_0.4.gif">二項分布</a> $n=10$, $p=0.4$ １個ずつ
+<li><a href="binomial_test_a_50_p_0.4.gif">二項分布</a> $n=10$, $p=0.4$ ５０個ずつ
+<li><a href="binomial_test_a_1_p_0.5.gif">二項分布</a> $n=10$, $p=0.5$ １個ずつ
+<li><a href="binomial_test_a_50_p_0.5.gif">二項分布</a> $n=10$, $p=0.5$ ５０個ずつ
+</ul>
+<li>標準正規分布
+<ul>
+ <li><a href="gauss_test_a_1.gif">標準正規分布</a>１個ずつ
+ <li><a href="gauss_test_a_50.gif">標準正規分布</a>５０個ずつ
+</ul>
+<li>注意：検定の文脈では，手元のデータが帰無仮説$H_0$のもとで発生したと判断して良いかどうか
+</ul>      
+</ul>
+検定と信頼区間
+<ul>
+ <li> 二項分布：$\hat{p}=x/n=0.3$であるが，$n$の違いによる信頼区間の幅．
+<ul>
+ <li><a href="binom_interval_n_10_x_3.gif">二項分布  </a> $n=10, x=3$
+<li><a href="binom_interval_n_20_x_6.gif">二項分布 </a> $n=20, x=6$
+<li><a href="binom_interval_n_50_x_15.gif">二項分布 </a> $n=50, x=15$
+</ul>
+<li>正規分布$N(\mu,5^2)$からの$n$個の標本．$\bar{x}=1.5$である場合の信頼区間．$n$の違いによる信頼区間の幅．
+<ul>
+ <li><a href="gauss_interval_n_16_barx_1.5.gif">正規分布 </a> $n=16$
+<li><a href="gauss_interval_n_25_barx_1.5.gif">正規分布 </a> $n=25$
+<li><a href="gauss_interval_n_100_barx_1.5.gif">正規分布 </a>$n=100$
+</ul>
+<li> $\Uparrow$ gifの一枚一枚は検定として理解できることに注意
+</ul>
+</body>
+</html>
